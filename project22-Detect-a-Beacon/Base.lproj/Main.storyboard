@@ -16,9 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eed-Q4-YpS">
+                                <rect key="frame" x="157" y="403" width="100" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UNKNOWN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ys6-cN-mcV">
-                                <rect key="frame" x="111" y="429" width="192" height="48"/>
+                                <rect key="frame" x="111" y="388" width="192" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEACON ID: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQ6-Jp-NyN">
+                                <rect key="frame" x="20" y="841" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -26,17 +36,26 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ys6-cN-mcV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4Ro-ER-ISC"/>
-                            <constraint firstItem="Ys6-cN-mcV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="x5T-v2-bXb"/>
+                            <constraint firstItem="eed-Q4-YpS" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.111607" id="2fb-gj-PEz"/>
+                            <constraint firstItem="eQ6-Jp-NyN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="G7M-2t-lgV"/>
+                            <constraint firstItem="eQ6-Jp-NyN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="HPM-vJ-vab"/>
+                            <constraint firstItem="Ys6-cN-mcV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="344" id="Ufm-Z0-zWD"/>
+                            <constraint firstItem="Ys6-cN-mcV" firstAttribute="centerX" secondItem="eQ6-Jp-NyN" secondAttribute="centerX" id="cJo-tr-KtC"/>
+                            <constraint firstItem="eed-Q4-YpS" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.241546" id="goO-hz-ct6"/>
+                            <constraint firstItem="eQ6-Jp-NyN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="guG-QB-NPj"/>
+                            <constraint firstItem="eed-Q4-YpS" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jo7-XI-VDh"/>
+                            <constraint firstItem="eed-Q4-YpS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tV7-mk-Wx3"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="beaconIDLabel" destination="eQ6-Jp-NyN" id="fAx-3y-zCL"/>
+                        <outlet property="circleView" destination="eed-Q4-YpS" id="G6M-zy-alf"/>
                         <outlet property="distanceLabel" destination="Ys6-cN-mcV" id="qgc-np-NXy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="84"/>
+            <point key="canvasLocation" x="0.0" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>
