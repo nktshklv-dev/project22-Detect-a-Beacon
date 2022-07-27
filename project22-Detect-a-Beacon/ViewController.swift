@@ -12,6 +12,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var distanceLabel: UILabel!
     var locationManager: CLLocationManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager = CLLocationManager()
@@ -39,6 +40,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startRangingBeacons(in: beaconRegion)
     }
     
+    
+    
+    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+        if let beacon = beacons.first{
+            update(distance: beacon.proximity)
+        }
+        else {
+            update(distance: .unknown)
+        }
+    }
+    
     func update(distance: CLProximity){
         UIView.animate(withDuration: 1) { [unowned self] in
             switch distance {
@@ -54,17 +66,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             case .unknown:
                 self.view.backgroundColor = .gray
                 self.distanceLabel.text = "UNKNOWN"
-                
+            @unknown default:
+                fatalError()
             }
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-        if let beacon = beacons.first{
-            update(distance: beacon.proximity)
-        }
-        else {
-            update(distance: .unknown)
         }
     }
 
